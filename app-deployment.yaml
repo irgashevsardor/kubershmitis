@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: app-deployment
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: app
@@ -14,9 +15,5 @@ spec:
       containers:
       - name: app
         image: irgashevsardor/tasks-app
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
         ports:
         - containerPort: 3000
