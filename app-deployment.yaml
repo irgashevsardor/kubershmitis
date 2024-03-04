@@ -20,6 +20,8 @@ spec:
         env:
           - name: MYSQL_USER
             value: "user"
+          - name: MYSQL_HOST
+            value: "mysql-service"
           - name: MYSQL_PASSWORD
             valueFrom:
               secretKeyRef:
