@@ -17,3 +17,13 @@ spec:
         image: irgashevsardor/tasks-app
         ports:
         - containerPort: 3000
+        env:
+          - name: MYSQL_USER
+            value: "user"
+          - name: MYSQL_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-env-data
+                key: MYSQL_PASSWORD
+          - name: MYSQL_DB
+            value: "list"
